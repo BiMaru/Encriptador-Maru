@@ -1,0 +1,219 @@
+
+/*VARIABLES*/ 
+:root {
+    --color-body:hsla(222 56.4% 21.6% / 1); /*#F3F5FC;*/    
+    --color-texto:hsla(162 100% 50% / 1); /*#0A3871;*/
+    --color-btn_encriptar: #0A3871; 
+    --color-btn_desencriptar: #D8DFE8;
+    --color-mensaje:#343A40;
+    --color-info:#495057;
+
+}
+body{
+    background-color: var(--color-body);
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    font-variation-settings:"slnt" 0;
+}
+
+.maru{
+    text-align: center;
+    color: var(--color-texto);
+    height: 30%;
+  
+}
+.header{
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+    text-align: left ;
+}
+
+.header_logo{
+     margin-top: 40px;
+     border: var(--color-texto);
+     /*margin-left: 40px;*/
+}
+
+/* MAIN*/
+.main{
+    width: 82.5%; /* 82,5 % me da justo 240- 40 */ 
+    margin: auto 40px auto auto;
+    display: grid; 
+    grid-template-columns: 2fr 1fr; /* 70% 30 % , no me da exacto 944 - 400px, puedo poner auto 400px*/
+    min-height: calc(100vh - 168px - 72px); /* Top 168px - 72 px, pongo minimo porque si no se me va el footer en tambaño cel*/
+    align-items: end;
+    padding-bottom: 40px;
+}
+
+.left{
+    height: 90%; /*680px o 85%*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+textarea{
+    font-family: "Inter", sans-serif;
+}
+.texto{
+     width: 82%;
+     font-size: 32px;
+     color:var(--color-texto);
+     resize: none; /* quede fijo el place*/
+     background: none ;
+     border: none;/* no tenga el borde el place*/
+     outline: none;
+}
+
+.texto::placeholder{
+    color: var(--color-texto);
+}
+
+/* .left__footer
+.letras{
+    background-color: aqua;
+}*/
+
+.detalle{
+    /*display: inline-block;*/
+    color:var(--color-texto) ;
+    font-size: 12px;
+    text-align: center;
+}
+
+.botones{
+    display: flex;
+    gap: 24px;
+    margin-top: 16px; /*22px*/
+    flex-wrap: wrap;
+}
+
+.btn_encriptar,
+.btn_desencriptar,
+.btn_copiar{
+    max-width: 328px; /* en vez de witdth le hago max para que los bonones no quedn fijos*/
+    min-width: 160px;
+    width: 40%; 
+    height: 67px;
+    border-radius: 24px;
+    font-size: 16px;
+    border: 1px solid var(--color-btn_encriptar);
+    cursor: pointer ;
+}
+
+.btn_encriptar{ 
+    background-color: var(--color-texto);
+    color: #2A2E37; /*#FFFFFF;*/
+}
+
+.btn_desencriptar{
+    background-color: var(--color-btn_desencriptar);
+    color: #2a2E37/*var(--color-texto);*/
+}
+
+.right{
+    background-color: white;
+    height: calc(100% + 48px);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box; /*me ajusta el padding al tamaños del contenedor*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+
+.right.confirmado{ /* con espacio que busque una clase dentro de otra clase, sin espacio para que tenga las 2 clases juntas */
+    justify-content: space-between ;
+}
+
+.muñeco{
+    width: 100%;
+}
+
+.no_mostrar{
+    display: none;
+}
+
+.mensaje{
+    background-color: none;
+    border: none;
+    outline: none;
+    resize: none;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: var(--color-btn_encriptar);
+}
+
+.mensaje.confirmado{
+    text-align: left;
+    font-weight: 24px;/*lighter;*/
+    height: 80%;
+}
+
+.info{
+    font-size: 16px;
+    text-align: center;
+    color: var(--color-info);
+}
+
+.btn_copiar{
+    width: 100% ;
+    display: none;
+    background: transparent;
+    color:var(--color-btn_encriptar);
+}
+
+footer{
+    height: 25% ;
+    padding: 14px;
+    background-color: #293A62;
+    text-align: center;
+    color:var(--color-texto);
+    margin: auto;
+}
+
+
+/*TABLET*/
+@media screen and (max-width:720px){
+    .main{
+        grid-template-columns:1fr;
+        grid-template-rows: 75% auto;
+        width: auto;
+        margin: auto 40px;
+    }
+
+    .botones{
+        justify-content: center;        
+    }
+
+    .btn_encriptar,
+    .btn_desencriptar{ 
+        width: 50%; /* 50 % */
+    }     
+    .right{
+        height: 100%;
+    }
+    .muñeco{
+        display: none;
+    }
+
+    /*CELULARES 375*/
+@media screen and(max-width:450px) {
+    .main {
+        margin: auto 16px;
+    }
+    .btn_encriptar,
+    .btn_desencriptar {
+        max-width: 100%;
+        width: 100%; /*50%*/
+    }     
+}
+}
+
